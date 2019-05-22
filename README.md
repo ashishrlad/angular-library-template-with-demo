@@ -1,27 +1,41 @@
-# TemplateLibWithDemo
+# Angular Template Library with Demo Web Project
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
+## Steps Used to Create this Project
 
-## Development server
+1. Create the Template Project
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+```
+ng new template-lib-with-demo --create-application=false
+```
 
-## Code scaffolding
+2. Create the Library Project
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```
+cd template-lib-with-demo
+ng generate library template-lib --prefix=template-lib
+```
+3. Create the Demo Web Application
 
-## Build
+ng generate application template-demo --prefix=template-demo
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+4. Ensure Projects Build and Serve Successfuly
 
-## Running unit tests
+ng build template-lib
+ng serve template-demo
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+5. Add Scripts to Top Level package.json
 
-## Running end-to-end tests
+"scripts": {
+  "build_lib": "ng build template-library",
+  "copy-license": "copy .\\LICENSE .\\dist\\template-lib",
+  "copy-readme": "copy .\\README.md .\\dist\\template-lib",
+  "copy-files": "npm run copy-license && npm run copy-readme",
+  "npm-pack": "cd dist/template-lib && npm pack",
+  "package": "npm run build_lib && npm run copy-files && npm run npm_pack",
+},
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+6. To Package the NPM Package
+```
+npm run package
+```
