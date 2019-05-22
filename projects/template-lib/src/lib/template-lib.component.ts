@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'template-lib-template-lib',
   template: `
     <p>
-      template-lib works!
+      This is the template-lib-component from the library project."
     </p>
   `,
   styles: []
