@@ -2,7 +2,7 @@
 
 ## Description
 
-This is an example of a project that contains a library intended to be published to NPM along with a Demo web application that uses the package. Because the projects are part of the same solution, ng serve can be used during development instead of needing to build the package every time package code is updated.
+This is an example of a project that contains a library intended to be published to NPM along with a Demo web application that uses the package. Because the projects are part of the same solution, ng serve with live browser reload can be used during development instead of needing to build the package every time package code is updated.
 
 Once the code is tested, it the library project can be published to NPM without including the web application code.
 
