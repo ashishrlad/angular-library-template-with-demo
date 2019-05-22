@@ -42,9 +42,15 @@ ng serve template-demo
 },
 ```
 
-
 6. To Package the NPM Package
 ```
 npm run package
 ```
+
+7. To Run the Application in Development Mode
+```
+ng serve
+```
+
+NOTE: Any changes to the library code will be watched and automatically recompiled. There is no need to build the NPM package during development.
 
