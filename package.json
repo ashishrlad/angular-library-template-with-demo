@@ -1,6 +1,14 @@
 {
   "name": "template-lib-with-demo",
   "version": "0.0.0",
+  "description": "This is a simple template Angular Library published to npm.",
+  "keywords" :["Angular","Library"],
+  "license" : "SEE LICENSE IN LICENSE",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/benbaran/template-lib"
+  },
+  "homepage" :"https://github.com/benbaran/template-lib",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
