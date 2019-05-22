@@ -33,12 +33,12 @@ ng serve template-demo
 
 ```
 "scripts": {
-  "build_lib": "ng build template-library",
-  "copy-license": "copy .\\LICENSE .\\dist\\template-lib",
-  "copy-readme": "copy .\\README.md .\\dist\\template-lib",
-  "copy-files": "npm run copy-license && npm run copy-readme",
-  "npm-pack": "cd dist/template-lib && npm pack",
-  "package": "npm run build_lib && npm run copy-files && npm run npm_pack",
+    ...
+    "build_lib": "ng build template-lib",
+    "copy_license": "copy .\\LICENSE .\\dist\\template-lib",
+    "copy_files": "npm run copy_license",
+    "npm_pack": "cd dist/template-lib && npm pack",
+    "package": "npm run build_lib && npm run copy_files && npm run npm_pack"
 },
 ```
 
