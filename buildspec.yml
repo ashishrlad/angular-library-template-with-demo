@@ -1,0 +1,35 @@
+version: 0.2
+env:
+  variables:
+    APP_NAME: "Angular-Library"
+phases:
+  install:
+   commands:
+     - sudo apt-get update && apt-get install -y awscli
+     - sudo apt-get install -y curl
+     - curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash - &&\
+     - sudo apt-get install -y nodejs
+     - npm install --force -g n
+     - n 16.16.0
+     - node -v
+     - npm -v
+  pre_build:
+    commands:
+     - echo installing dependencies
+     - npm i -g @angular/cli
+     - ls -ll
+     - pwd 
+	   - npm install --force
+	   - aws codeartifact login --tool npm --repository myangulardemo --domain ashishrlad --domain-owner 712106808725 --region ap-south-1
+     - export CODEARTIFACT_AUTH_TOKEN=`aws codeartifact get-authorization-token --domain ashishrlad --domain-owner 712106808725 --region ap-south-1 --query authorizationToken --output text`
+     - ng build template-lib &&
+     - cd dist
+     - ls -ll
+     - cd dynamic-library
+     - ls -ll
+  build:
+    commands:
+     - npm publish --force dist/template-lib/
+artifacts:
+  files:
+    - "**/*"
