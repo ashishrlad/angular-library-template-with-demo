@@ -19,7 +19,7 @@ phases:
      - npm i -g @angular/cli
      - ls -ll
      - pwd
-	   - npm install --force
+     - npm install --force
      - aws codeartifact login --tool npm --repository myangulardemo --domain ashishrlad --domain-owner 712106808725 --region ap-south-1
      - export CODEARTIFACT_AUTH_TOKEN=`aws codeartifact get-authorization-token --domain ashishrlad --domain-owner 712106808725 --region ap-south-1 --query authorizationToken --output text`
      - ng build template-lib &&
